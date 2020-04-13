@@ -24,7 +24,8 @@ import app
 class ComputationServerTest(unittest.TestCase):
     def make_request(self,url,data):
         requests.post(url,data=data)
-        return val = Expression.query(value).last()
+        val = Expression.query(value).last()
+        return val
 
     def test_HTTPreq(self):
         """Tests for correct value returned"""
