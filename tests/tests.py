@@ -30,13 +30,13 @@ class ComputationServerTest(unittest.TestCase):
     def test_HTTPreq(self):
         """Tests for correct value returned"""
         url = "http://{}:8000/add/".format(self.get_docker_host())
-        data = {'expression'='5*5'}
+        data = {'expression':'5*5'}
         self.assertEqual(make_request(url,data),25)
 
     def test_invalidHTTPreq(self):
         """Checks for InvalidExpressionError when invalid expression entered"""
         url = "http://{}:8000/add/".format(self.get_docker_host())
-        data = {'expression'='5-'}
+        data = {'expression':'5-'}
         self.assertRaises(app.InvalidExpressionError,make_request(url,data))
 
     def test_dbRows(self):
